@@ -1,0 +1,217 @@
+@import url(./reset.css);
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@font-face { font-family: NanumGothic; src: local(NanumGothicR), local(NanumGothic), url(NanumGothicR.eot?#iefix) format("embedded-opentype"), url(NanumGothicR.woff) format("woff"); font-style: normal; }
+body { overflow-x: hidden; min-width: 100%; font-family: NanumGothic, sans-serif; }
+@media screen and (max-width: 992px) { body { min-width: 100%; } }
+@media screen and (max-width: 502px) { body { min-width: 100%; } }
+body > #wrap { height: 100%; }
+body > #wrap > .visual { overflow: hidden; position: relative; width: 100%; height: 100%; margin: 0 auto; background: center center fixed no-repeat; }
+@media screen and (max-width: 502px) { body > #wrap > .visual { height: 400px; margin-top: 66px; } }
+body > #wrap > .visual > video { overflow: hidden; position: fixed; width: auto; height: 100%; min-width: 100%; min-height: 100%; margin: 0; padding: 0; object-fit: cover; z-index: -1000; }
+@media screen and (max-width: 992px) { body > #wrap > .visual > video { width: 100%; object-fit: initial; } }
+@media screen and (max-width: 502px) { body > #wrap > .visual > video { width: 100%; height: 100%; object-fit: initial; } }
+body > #wrap > .visual > .bg { position: absolute; left: 0; top: 0; display: block; width: 100%; height: 100%; opacity: 0.4; background-color: #000; }
+body > #wrap > .visual > .visual_txt { position: relative; width: 85%; height: 100%; margin: 0 auto; }
+@media screen and (max-width: 502px) { body > #wrap > .visual > .visual_txt { width: 100%; } }
+body > #wrap > .visual > .visual_txt > h1 { display: none; position: absolute; left: 0; bottom: 230px; color: #fff; font-size: 100px; font-weight: 500; font-family: 'Roboto', sans-serif; line-height: 1.0; letter-spacing: 2px; }
+@media screen and (max-width: 992px) { body > #wrap > .visual > .visual_txt > h1 { width: 400px; top: 300px; left: 30px; font-size: 80px; } }
+@media screen and (max-width: 502px) { body > #wrap > .visual > .visual_txt > h1 { width: initial; top: 200px; left: 20px; font-size: 55px; } }
+body > #wrap > .visual > .visual_txt > p { display: none; position: absolute; left: 0; bottom: 130px; color: #fff; font-size: 20px; line-height: 1.8; letter-spacing: 2px; }
+@media screen and (max-width: 992px) { body > #wrap > .visual > .visual_txt > p { width: 400px; left: 30px; font-size: 16px; } }
+@media screen and (max-width: 502px) { body > #wrap > .visual > .visual_txt > p { left: 20px; top: 320px; font-size: 13px; } }
+body > #wrap > .visual > .visual_txt > .visual-btn { position: absolute; left: 50%; bottom: 50px; display: block; width: 22px; height: 51px; margin-left: -11px; background-image: url(../images/scroll.png); background-size: cover; background-repeat: no-repeat; text-indent: -9999px; z-index: 1000; }
+@media screen and (max-width: 502px) { body > #wrap > .visual > .visual_txt > .visual-btn { display: none; } }
+body > #wrap > .visual > .visual_txt > .visual-logo { position: absolute; right: 0; top: 50px; display: block; width: 100px; height: 100px; background-image: url(../images/logo_h.png); background-size: cover; text-indent: -9999px; }
+@media screen and (max-width: 502px) { body > #wrap > .visual > .visual_txt > .visual-logo { display: none; } }
+body > #wrap > header { position: relative; width: 100%; height: 66px; background-color: #f0663c; z-index: 1000; }
+@media screen and (max-width: 502px) { body > #wrap > header { position: fixed; left: 0; top: 0; } }
+body > #wrap > header.h-fixed { position: fixed; left: 0; top: 0; }
+body > #wrap > header > div { position: relative; width: 100%; height: 66px; }
+@media screen and (max-width: 992px) { body > #wrap > header > div { width: 100%; } }
+body > #wrap > header > div > .logo { position: absolute; left: 150px; bottom: 10px; width: 200px; height: 55px; background-image: url(../images/logo_w.png); background-size: cover; background-position: center 45%; background-repeat: no-repeat; }
+@media screen and (max-width: 992px) { body > #wrap > header > div > .logo { left: 0; width: 150px; } }
+body > #wrap > header > div > .logo > a { display: block; text-indent: -9999px; }
+@media screen and (max-width: 502px) { body > #wrap > header > div > .logo { width: 220px; left: 50%; margin-left: -110px; } }
+body > #wrap > header > div > .logo > a { display: block; height: 66px; line-height: 66px; text-align: center; }
+body > #wrap > header > div > .menu-btn { display: none; }
+@media screen and (max-width: 502px) { body > #wrap > header > div > .menu-btn { display: block; position: absolute; right: 10px; top: 50%; margin-top: -15px; width: 30px; height: 30px; text-indent: -9999px; background-image: url(../images/menu.png); background-size: contain; background-repeat: no-repeat; } }
+body > #wrap > header > div > nav { position: absolute; right: 0; top: 0; width: calc(100% - 500px); }
+@media screen and (max-width: 992px) { body > #wrap > header > div > nav { width: calc(100% - 150px); } }
+@media screen and (max-width: 502px) { body > #wrap > header > div > nav { display: none; top: 66px; width: 100%; }
+  body > #wrap > header > div > nav.mobile-hidden { display: none !important; } }
+body > #wrap > header > div > nav > .gnb { display: flex; }
+@media screen and (max-width: 502px) { body > #wrap > header > div > nav > .gnb { display: initial; } }
+body > #wrap > header > div > nav > .gnb > li { position: relative; width: calc(100% / 4); }
+@media screen and (max-width: 992px) { body > #wrap > header > div > nav > .gnb > li { width: calc(100% / 4); } }
+@media screen and (max-width: 502px) { body > #wrap > header > div > nav > .gnb > li { width: 100%; background-color: #fff; } }
+body > #wrap > header > div > nav > .gnb > li.on > a { color: #f0663c; font-weight: 800; background-color: #fff; }
+body > #wrap > header > div > nav > .gnb > li:hover > a { color: #f0663c; font-weight: 800; background-color: #fff; }
+@media screen and (max-width: 502px) { body > #wrap > header > div > nav > .gnb > li:hover > a { background-color: #f0663c; color: #fff; } }
+body > #wrap > header > div > nav > .gnb > li > a { display: block; height: 66px; color: #fff; line-height: 66px; font-size: 15px; font-weight: 600; text-align: center; }
+@media screen and (max-width: 992px) { body > #wrap > header > div > nav > .gnb > li > a { font-size: 10px; } }
+@media screen and (max-width: 502px) { body > #wrap > header > div > nav > .gnb > li > a { color: #f0663c; font-size: 12px; } }
+body > #wrap > section { background-color: #fff; }
+body > #wrap > section > .about > .about_tit { width: 100%; padding: 50px 0; }
+body > #wrap > section > .about > .about_tit > h2 { display: none; color: #f0663c; font-weight: 600; font-size: 50px; text-align: center; }
+body > #wrap > section > .about > .about_tit > p { display: none; width: 100px; height: 5px; background-color: #f0663c; margin: 0 auto; }
+body > #wrap > section > .about > .about_container { display: flex; width: 100%; height: auto; }
+@media screen and (max-width: 502px) { body > #wrap > section > .about > .about_container { display: initial; } }
+body > #wrap > section > .about > .about_container > .left { opacity: 0; position: relative; width: 50%; height: 100%; }
+@media screen and (max-width: 502px) { body > #wrap > section > .about > .about_container > .left { width: 100%; } }
+body > #wrap > section > .about > .about_container > .left > .frame { width: 70%; height: auto; margin: 0 auto; }
+body > #wrap > section > .about > .about_container > .left > .frame > img { display: block; width: 100%; border-radius: 300px; }
+body > #wrap > section > .about > .about_container > .left > div { width: 80%; margin: 50px auto; }
+body > #wrap > section > .about > .about_container > .left > div > p { text-align: center; margin-bottom: 10px; font-size: 17px; font-weight: 600; }
+@media screen and (max-width: 992px) { body > #wrap > section > .about > .about_container > .left > div > p { font-size: 16px; } }
+body > #wrap > section > .about > .about_container > .right { width: 50%; height: 100%; }
+@media screen and (max-width: 502px) { body > #wrap > section > .about > .about_container > .right { width: 100%; } }
+body > #wrap > section > .about > .about_container > .right > .profile { position: relative; opacity: 0; width: 80%; padding: 10% 0; margin: 0 auto; }
+@media screen and (max-width: 992px) { body > #wrap > section > .about > .about_container > .right > .profile { padding: 0; } }
+body > #wrap > section > .about > .about_container > .right > .profile > h3 { height: 100%; width: 70%; opacity: 0.3; }
+@media screen and (max-width: 992px) { body > #wrap > section > .about > .about_container > .right > .profile > h3 { position: initial; width: 70%; height: auto; margin: 0 auto 10%; opacity: 1; } }
+body > #wrap > section > .about > .about_container > .right > .profile > h3 > img { display: block; width: 100%; }
+body > #wrap > section > .about > .about_container > .right > .profile > .btu { position: absolute; bottom: 10px; right: 20px; color: #111; font-size: 1.2vw; line-height: 1.6; letter-spacing: 2px; text-shadow: 1px 1px 0px #fff; }
+@media screen and (max-width: 992px) { body > #wrap > section > .about > .about_container > .right > .profile > .btu { position: initial; width: 100%; margin: 0 auto; color: #7a7a7a; text-align: center; text-shadow: initial; } }
+@media screen and (max-width: 502px) { body > #wrap > section > .about > .about_container > .right > .profile > .btu { font-size: 15px; } }
+body > #wrap > section > .about > .about_container > .right > .hash-tag { padding: 5% 0; }
+body > #wrap > section > .about > .about_container > .right > .hash-tag > p { opacity: 0; margin: 0 0 50px 40px; font-size: 40px; font-weight: 600; }
+@media screen and (max-width: 992px) { body > #wrap > section > .about > .about_container > .right > .hash-tag > p { margin-left: 0; margin-bottom: 20px; font-size: 30px; text-align: center; } }
+body > #wrap > section > .about > .about_container > .right > .hash-tag > .about_me { opacity: 0; display: flex; justify-content: space-between; width: 85%; margin: 0 auto; }
+@media screen and (max-width: 992px) { body > #wrap > section > .about > .about_container > .right > .hash-tag > .about_me { width: 100%; } }
+body > #wrap > section > .about > .about_container > .right > .hash-tag > .about_me > div { width: calc(100% / 3); }
+body > #wrap > section > .about > .about_container > .right > .hash-tag > .about_me > div.patience { margin: 0 50px; }
+body > #wrap > section > .about > .about_container > .right > .hash-tag > .about_me > div > .frame { width: 80px; height: 80px; margin: 0 auto; }
+@media screen and (max-width: 992px) { body > #wrap > section > .about > .about_container > .right > .hash-tag > .about_me > div > .frame { width: 50px; height: 50px; } }
+body > #wrap > section > .about > .about_container > .right > .hash-tag > .about_me > div > .frame > img { display: block; width: 100%; }
+body > #wrap > section > .about > .about_container > .right > .hash-tag > .about_me > div > h4 { margin: 10px 0; color: #000; font-size: 20px; font-weight: 600; text-align: center; }
+@media screen and (max-width: 992px) { body > #wrap > section > .about > .about_container > .right > .hash-tag > .about_me > div > h4 { font-size: 15px; } }
+body > #wrap > section > .about > .about_container > .right > .hash-tag > .about_me > div > span { display: block; font-size: 11px; text-align: center; }
+body > #wrap > section > .skill > .skill_tit { padding: 50px 0; }
+body > #wrap > section > .skill > .skill_tit > h2 { display: none; color: #f0663c; font-weight: 600; font-size: 50px; text-align: center; }
+body > #wrap > section > .skill > .skill_tit > p { display: none; width: 100px; height: 5px; background-color: #f0663c; margin: 0 auto; }
+body > #wrap > section > .skill > .skill_container { position: relative; width: 80%; margin: 0 auto; padding: 5% 0 10% 0; }
+@media screen and (max-width: 992px) { body > #wrap > section > .skill > .skill_container { width: 100%; } }
+@media screen and (max-width: 502px) { body > #wrap > section > .skill > .skill_container { width: 100%; } }
+body > #wrap > section > .skill > .skill_container > .skills { width: 100%; }
+body > #wrap > section > .skill > .skill_container > .skills > ul { display: flex; justify-content: space-around; margin-bottom: 130px; }
+body > #wrap > section > .skill > .skill_container > .skills > ul:last-child { margin-bottom: 0; }
+@media screen and (max-width: 502px) { body > #wrap > section > .skill > .skill_container > .skills > ul:last-child { padding-bottom: 10%; } }
+@media screen and (max-width: 502px) { body > #wrap > section > .skill > .skill_container > .skills > ul { margin-bottom: 75px; } }
+body > #wrap > section > .skill > .skill_container > .skills > ul > li { position: relative; width: 200px; height: 180px; font-size: 20px; font-weight: 600; }
+@media screen and (max-width: 992px) { body > #wrap > section > .skill > .skill_container > .skills > ul > li { width: calc(100% / 4); height: auto; } }
+@media screen and (max-width: 502px) { body > #wrap > section > .skill > .skill_container > .skills > ul > li { width: calc(100% / 4 - 15px); } }
+body > #wrap > section > .skill > .skill_container > .skills > ul > li:hover > .frame > img { transform: scale(1.1); }
+body > #wrap > section > .skill > .skill_container > .skills > ul > li > span { position: absolute; bottom: 0; display: block; width: 100%; height: 20%; font-weight: 600; font-size: 16px; line-height: 30px; text-align: center; }
+@media screen and (max-width: 992px) { body > #wrap > section > .skill > .skill_container > .skills > ul > li > span { line-height: initial; } }
+@media screen and (max-width: 502px) { body > #wrap > section > .skill > .skill_container > .skills > ul > li > span { font-size: 13px; } }
+body > #wrap > section > .skill > .skill_container > .skills > ul > li > .frame { overflow: hidden; width: 80%; height: 80%; margin: 0 auto; }
+@media screen and (max-width: 992px) { body > #wrap > section > .skill > .skill_container > .skills > ul > li > .frame { width: 60%; } }
+@media screen and (max-width: 502px) { body > #wrap > section > .skill > .skill_container > .skills > ul > li > .frame { width: 75%; } }
+body > #wrap > section > .skill > .skill_container > .skills > ul > li > .frame > img { display: block; width: 100%; height: 100%; transition: all 1s; }
+body > #wrap > section > .skill > .skill_container > .skills > ul > li > .jquery { width: 80%; height: 60px; margin-top: 30px; }
+@media screen and (max-width: 992px) { body > #wrap > section > .skill > .skill_container > .skills > ul > li > .jquery { width: 80%; height: auto; margin-top: 20px; } }
+@media screen and (max-width: 502px) { body > #wrap > section > .skill > .skill_container > .skills > ul > li > .jquery { width: 100%; margin-top: 25px; } }
+body > #wrap > section > .skill > .skill-show { width: 80%; margin: 0 auto; }
+body > #wrap > section > .skill > .skill-show > ul > li { width: 100%; margin-bottom: 80px; }
+body > #wrap > section > .skill > .skill-show > ul > li > a { position: relative; display: block; margin-left: 30px; height: 50px; line-height: 50px; font-size: 20px; font-weight: 600; border-bottom: 3px solid #f0663c; }
+body > #wrap > section > .skill > .skill-show > ul > li > a:after { position: absolute; right: 10px; top: 20px; width: 0; height: 0; border-width: 10px; border-style: solid; border-color: #f0663c transparent transparent transparent; content: ''; }
+body > #wrap > section > .skill > .skill-show > ul > li > ol { display: none; }
+body > #wrap > section > .skill > .skill-show > ul > li > ol > li { width: 80%; padding: 20px 0; margin-left: 50px; font-size: 16px; }
+body > #wrap > section > .portfolio > div { display: flex; width: 100%; height: 500px; margin-bottom: 100px; background-color: white; transition: all 0.9s; }
+@media screen and (max-width: 992px) { body > #wrap > section > .portfolio > div { transition: initial; } }
+@media screen and (max-width: 502px) { body > #wrap > section > .portfolio > div { display: block; position: relative; height: 800px; } }
+body > #wrap > section > .portfolio > div > .exp { position: relative; width: 50%; height: 100%; }
+@media screen and (max-width: 502px) { body > #wrap > section > .portfolio > div > .exp { position: absolute; left: 0; bottom: 0; width: 100%; height: 300px; } }
+body > #wrap > section > .portfolio > div > .exp > .txt { position: absolute; top: 80px; left: 50%; width: 400px; height: 300px; margin-left: -200px; }
+@media screen and (max-width: 992px) { body > #wrap > section > .portfolio > div > .exp > .txt { top: 50%; width: 100%; margin: -150px 0 0 -50%; text-align: center; } }
+body > #wrap > section > .portfolio > div > .exp > .txt > h2 { margin-bottom: 30px; font-size: 40px; }
+body > #wrap > section > .portfolio > div > .exp > .txt > p { margin-bottom: 10px; font-size: 16px; }
+@media screen and (max-width: 992px) { body > #wrap > section > .portfolio > div > .exp > .txt > p { font-size: 13px; } }
+body > #wrap > section > .portfolio > div > .exp > .txt > a { display: block; width: 130px; height: 40px; margin-top: 30px; line-height: 40px; text-align: center; border: 1px solid #f0663c; border-radius: 100px; }
+@media screen and (max-width: 992px) { body > #wrap > section > .portfolio > div > .exp > .txt > a { position: absolute; left: 50%; margin-left: -65px; } }
+@media screen and (max-width: 502px) { body > #wrap > section > .portfolio > div > .exp > .txt > a { position: absolute; left: 50%; margin-left: -65px; } }
+body > #wrap > section > .portfolio > div > .exp > .txt > .go { margin-top: 30px; }
+body > #wrap > section > .portfolio > div > .piture { position: relative; width: 50%; height: 100%; }
+@media screen and (max-width: 502px) { body > #wrap > section > .portfolio > div > .piture { width: 100%; height: 500px; } }
+body > #wrap > section > .portfolio > div > .piture > .frame { position: absolute; left: 50%; }
+@media screen and (max-width: 502px) { body > #wrap > section > .portfolio > div > .piture > .frame { width: 100%; } }
+body > #wrap > section > .portfolio > div > .piture > .frame > img { display: block; width: 100%; height: 100%; }
+body > #wrap > section > .portfolio > div:hover { color: #fff; background-color: #f0663c; }
+body > #wrap > section > .portfolio > div:hover > .exp > .txt > a { color: #fff; border-color: #fff; }
+body > #wrap > section > .portfolio > div.line > .piture > .frame { top: 50%; margin-left: -40%; width: 80%; height: 220px; margin-top: -130px; }
+@media screen and (max-width: 992px) { body > #wrap > section > .portfolio > div.line > .piture > .frame { width: 100%; height: 50%; margin-left: -50%; } }
+@media screen and (max-width: 502px) { body > #wrap > section > .portfolio > div.line > .piture > .frame { width: 100%; } }
+body > #wrap > section > .portfolio > div.kyoungdong > .piture > .frame { top: 50%; width: 80%; margin: -25% 0 0 -40%; }
+@media screen and (max-width: 992px) { body > #wrap > section > .portfolio > div.kyoungdong > .piture > .frame { width: 100%; margin-left: -50%; } }
+body > #wrap > section > .portfolio > div.nateon > .exp > .txt > .process { position: absolute; left: 180px; top: 188px; }
+@media screen and (max-width: 992px) { body > #wrap > section > .portfolio > div.nateon > .exp > .txt > .process { width: 30%; left: 50%; margin-left: 5%; } }
+@media screen and (max-width: 502px) { body > #wrap > section > .portfolio > div.nateon > .exp > .txt > .process { left: 70px; margin-left: initial; } }
+body > #wrap > section > .portfolio > div.nateon > .exp > .txt > .go { position: absolute; left: 0; top: 188px; }
+@media screen and (max-width: 992px) { body > #wrap > section > .portfolio > div.nateon > .exp > .txt > .go { width: 30%; left: 50%; margin-left: -30%; } }
+@media screen and (max-width: 502px) { body > #wrap > section > .portfolio > div.nateon > .exp > .txt > .go { left: initial; right: 70px; margin-left: initial; } }
+body > #wrap > section > .portfolio > div.nateon > .piture > .frame { top: 50px; width: 500px; height: auto; margin-left: -250px; }
+@media screen and (max-width: 992px) { body > #wrap > section > .portfolio > div.nateon > .piture > .frame { width: 90%; top: 50%; margin: -40% 0 0 -45%; } }
+body > #wrap > section > .portfolio > div.tngt > .exp > .txt > .process { position: absolute; left: 180px; top: 188px; }
+@media screen and (max-width: 992px) { body > #wrap > section > .portfolio > div.tngt > .exp > .txt > .process { left: 50%; width: 30%; margin-left: 5%; } }
+@media screen and (max-width: 502px) { body > #wrap > section > .portfolio > div.tngt > .exp > .txt > .process { left: 70px; margin-left: initial; } }
+body > #wrap > section > .portfolio > div.tngt > .exp > .txt > .go { position: absolute; left: 0; top: 188px; }
+@media screen and (max-width: 992px) { body > #wrap > section > .portfolio > div.tngt > .exp > .txt > .go { width: 30%; left: 50%; margin-left: -30%; } }
+@media screen and (max-width: 502px) { body > #wrap > section > .portfolio > div.tngt > .exp > .txt > .go { left: initial; right: 70px; margin-left: initial; } }
+body > #wrap > section > .portfolio > div.tngt > .piture > .frame { width: 80%; height: 100%; margin-left: -40%; }
+@media screen and (max-width: 992px) { body > #wrap > section > .portfolio > div.tngt > .piture > .frame { width: 100%; margin-left: -50%; } }
+body > #wrap > section > .uiux > .uiux-tit { position: relative; padding: 50px 0; }
+body > #wrap > section > .uiux > .uiux-tit > h2 { display: none; text-align: center; color: #f0663c; font-weight: 600; font-size: 50px; }
+body > #wrap > section > .uiux > .uiux-tit > p { display: none; width: 100px; height: 5px; background-color: #f0663c; margin: 0 auto; }
+body > #wrap > section > .uiux > .uiux_container { display: flex; justify-content: space-between; position: relative; width: 80%; height: 500px; margin: 0 auto; }
+@media screen and (max-width: 992px) { body > #wrap > section > .uiux > .uiux_container { width: 100%; height: 300px; } }
+@media screen and (max-width: 502px) { body > #wrap > section > .uiux > .uiux_container { display: initial; } }
+body > #wrap > section > .uiux > .uiux_container > div { position: relative; width: 45%; height: 400px; }
+@media screen and (max-width: 992px) { body > #wrap > section > .uiux > .uiux_container > div { width: 45%; height: 100%; } }
+@media screen and (max-width: 502px) { body > #wrap > section > .uiux > .uiux_container > div { width: 100%; height: 300px; margin-bottom: 30px; } }
+body > #wrap > section > .uiux > .uiux_container > div > img { display: block; width: 100%; height: 100%; }
+body > #wrap > section > .uiux > .uiux_container > div > .bg { position: absolute; left: 0; top: 0; display: block; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); }
+body > #wrap > section > .uiux > .uiux_container > div > h3 { position: absolute; top: 100px; right: 50px; color: #fff; font-size: 35px; }
+@media screen and (max-width: 992px) { body > #wrap > section > .uiux > .uiux_container > div > h3 { width: 40%; right: 0; top: 70px; left: 50%; margin-left: -20%; font-size: 30px; text-align: center; } }
+@media screen and (max-width: 502px) { body > #wrap > section > .uiux > .uiux_container > div > h3 { top: 70px; width: 80%; margin-left: -40%; } }
+body > #wrap > section > .uiux > .uiux_container > div > p { position: absolute; top: 160px; right: 50px; color: #fff; font-size: 13px; }
+@media screen and (max-width: 992px) { body > #wrap > section > .uiux > .uiux_container > div > p { right: 0; top: 160px; left: 50%; width: 80%; margin-left: -40%; text-align: center; } }
+@media screen and (max-width: 502px) { body > #wrap > section > .uiux > .uiux_container > div > p { top: 130px; } }
+body > #wrap > section > .uiux > .uiux_container > div > a { position: absolute; top: 250px; right: 50px; display: block; width: 150px; height: 50px; color: #fff; font-size: 15px; line-height: 50px; text-align: center; border: 1px solid #fff; }
+@media screen and (max-width: 992px) { body > #wrap > section > .uiux > .uiux_container > div > a { top: initial; right: 0; left: 50%; bottom: 50px; width: 140px; height: 40px; margin-left: -70px; line-height: 40px; } }
+body > #wrap > section > .contact { height: 1000px; }
+body > #wrap > section > .contact > .contact_tit { padding: 50px 0; }
+body > #wrap > section > .contact > .contact_tit > h2 { display: none; color: #f0663c; font-weight: 600; font-size: 50px; text-align: center; }
+body > #wrap > section > .contact > .contact_tit > p { display: none; width: 100px; height: 5px; background-color: #f0663c; margin: 0 auto; }
+body > #wrap > section > .contact > .email-form { display: none; position: relative; }
+body > #wrap > section > .contact > .email-form > .alert-light { font-size: 15px; text-align: center; line-height: 1.8; letter-spacing: 1px; }
+body > #wrap > section > .contact > .email-form > .blinking { -webkit-animation: blink 1.5s ease-in-out infinite alternate; -moz-animation: blink 1.5s ease-in-out infinite alternate; animation: blink 1.5s ease-in-out infinite alternate; }
+body > #wrap > section > .contact > .email-form > .gform { width: 800px; height: 700px; margin: 0 auto; }
+@media screen and (max-width: 992px) { body > #wrap > section > .contact > .email-form > .gform { width: 90%; } }
+@media screen and (max-width: 502px) { body > #wrap > section > .contact > .email-form > .gform { width: 90%; } }
+body > #wrap > section > .contact > .email-form > .gform > fieldset { margin-bottom: 50px; }
+body > #wrap > section > .contact > .email-form > .gform > fieldset > label { margin-bottom: 10px; font-size: 17px; }
+body > #wrap > section > .contact > .email-form > .gform > fieldset > input { border-color: #f0663c; }
+body > #wrap > section > .contact > .email-form > .gform > fieldset > textarea { border-color: #f0663c; }
+body > #wrap > section > .contact > .email-form > .gform > .send { border: 0; outline: 0; position: absolute; width: 200px; height: 50px; left: 50%; bottom: 90px; margin-left: -100px; color: #fff; font-size: 15px; line-height: 50px; text-align: center; background-color: #f0663c; }
+body > #wrap > section > .contact > .email-form > .gform > .thankyou_message { position: absolute; bottom: 0; width: 800px; height: 50px; line-height: 2.0; }
+@media screen and (max-width: 502px) { body > #wrap > section > .contact > .email-form > .gform > .thankyou_message { width: 90%; line-height: 2.5; font-size: 8px; } }
+body > #wrap > section > .top-btn { z-index: 100; display: none; position: fixed; bottom: 82px; right: 30px; width: 60px; height: 60px; color: #f0663c; font-weight: 600; text-align: center; line-height: 60px; letter-spacing: 1px; border-radius: 30px; }
+@media screen and (max-width: 992px) { body > #wrap > section > .top-btn { bottom: 50px; } }
+body > #wrap > section > .top-btn:hover { color: #fff; background-color: #f0663c; }
+body > #wrap > footer { position: relative; height: 155px; background-color: #fff; }
+body > #wrap > footer > address { position: absolute; width: 100%; bottom: 20px; color: #ccc; font-size: 15px; text-align: center; }
+body > #wrap > footer > a { position: absolute; left: 50%; top: 10px; display: block; width: 200px; height: 100px; margin-left: -100px; }
+@media screen and (max-width: 502px) { body > #wrap > footer > a { width: 150px; height: 70px; margin-left: -75px; } }
+body > #wrap > footer > a > img { display: block; width: 100%; height: 100%; }
+
+@-webkit-keyframes blink { 0% { opacity: 0.5; }
+  100% { text-shadow: 1px 1px 10px #ffca8e; color: #f0663c; opacity: 1; } }
+@-moz-keyframes blink { 0% { opacity: 0.5; }
+  100% { text-shadow: 1px 1px 10px #ffca8e; color: #f0663c; opacity: 1; } }
+@keyframes blink { 0% { opacity: 0.5; }
+  100% { text-shadow: 1px 1px 10px #ffca8e; color: #f0663c; opacity: 1; } }
+#smartlock_container, #tngt_container, #hollys_container, #nateon_container { width: 70%; margin: 0 auto; }
+@media screen and (max-width: 992px) { #smartlock_container, #tngt_container, #hollys_container, #nateon_container { width: 100%; } }
+#smartlock_container > img, #tngt_container > img, #hollys_container > img, #nateon_container > img { display: block; width: 100%; height: 100%; }
+
+/*# sourceMappingURL=style.css.map */

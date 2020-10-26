@@ -1,0 +1,1184 @@
+@charset "utf-8";
+@import "./reset.css";
+@font-face {
+	font-family: NanumGothic;
+	src: local(NanumGothicR), local(NanumGothic),
+		url(NanumGothicR.eot?#iefix) format('embedded-opentype'), url(NanumGothicR.woff) format('woff');
+	font-style: normal;
+}
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+$width-tablet: 992px;
+$width-mobile: 502px;
+
+$tablet: "screen and (max-width:"+$width-tablet+")";
+$mobile: "screen and (max-width:"+$width-mobile+")";
+
+body {
+	overflow-x: hidden;
+	min-width: 100%;
+	font-family: NanumGothic, sans-serif;
+	@media #{$tablet} {
+		min-width: 100%;
+	}
+	@media #{$mobile} {
+		min-width: 100%;
+	}
+	> #wrap {
+		height: 100%;
+		> .visual {
+			overflow: hidden;
+			position: relative;
+			width: 100%;
+			height: 100%;
+			margin: 0 auto;
+			background: center center fixed no-repeat;
+			@media #{$mobile} {
+				height: 400px;
+				margin-top: 66px;
+			}
+			> video {
+				overflow: hidden;
+				position: fixed;
+				width: auto;
+				height: 100%;
+				min-width: 100%;
+				min-height: 100%;
+				margin: 0;
+				padding: 0;
+				object-fit: cover;
+				z-index: -1000;
+				@media #{$tablet} {
+					width: 100%;
+					object-fit: initial;
+				}
+				@media #{$mobile} {
+					width: 100%;
+					height: 100%;
+					object-fit: initial;
+				}
+			}
+			> .bg {
+				position: absolute;
+				left: 0;
+				top: 0;
+				display: block;
+				width: 100%;
+				height: 100%;
+				opacity: 0.4;
+				background-color: #000;
+			}
+			> .visual_txt {
+				position: relative;
+				width: 85%;
+				height: 100%;
+				margin: 0 auto;
+				@media #{$mobile} {
+					width: 100%;
+				}
+				> h1 {
+					display: none;
+					position: absolute;
+					left: 0;
+					bottom: 230px;
+					color: #fff;
+					font-size: 100px;
+					font-weight: 500;
+					font-family: 'Roboto', sans-serif;
+					line-height: 1.0;
+					letter-spacing: 2px;
+					@media #{$tablet} {
+						width: 400px;
+						top: 300px;
+						left: 30px;
+						font-size: 80px;
+					}
+					@media #{$mobile} {
+						width: initial;
+						top: 200px;
+						left: 20px;
+						font-size: 55px;
+					}
+				}
+				> p {
+					display: none;
+					position: absolute;
+					left: 0;
+					bottom: 130px;
+					color: #fff;
+					font-size: 20px;
+					line-height: 1.8;
+					letter-spacing: 2px;
+					@media #{$tablet} {
+						width: 400px;
+						left: 30px;
+						font-size: 16px;
+					}
+					@media #{$mobile} {
+						left: 20px;
+						top: 320px;
+						font-size: 13px;
+					}
+				}
+				> .visual-btn {
+					position: absolute;
+					left: 50%;
+					bottom: 50px;
+					display: block;
+					width: 22px;
+					height: 51px;
+					margin-left: -11px;
+					background-image: url(../images/scroll.png);
+					background-size: cover;
+					background-repeat: no-repeat;
+					text-indent: -9999px;
+					z-index: 1000;
+					@media #{$mobile} {
+						display: none;
+					}
+				}
+				> .visual-logo {
+					position: absolute;
+					right: 0;
+					top: 50px;
+					display: block;
+					width: 100px;
+					height: 100px;
+					background-image: url(../images/logo_h.png);
+					background-size: cover;
+					text-indent: -9999px;
+					@media #{$mobile} {
+						display: none;
+					}
+				}
+			}
+		} //end of visual
+		> header {
+			position: relative;
+			width: 100%;
+			height: 66px;
+			background-color: #f0663c;
+			z-index: 1000;
+			@media #{$mobile} {
+				position: fixed;
+				left: 0;
+				top: 0;
+			}
+			&.h-fixed {
+				position: fixed;
+				left: 0;
+				top: 0;
+			}
+			> div {
+				position: relative;
+				width: 100%;
+				height: 66px;
+				@media #{$tablet} {
+					width: 100%;
+				}
+				> .logo {
+					position: absolute;
+					left: 150px;
+					bottom: 10px;
+					width: 200px;
+					height: 55px;
+					background-image: url(../images/logo_w.png);
+					background-size: cover;
+					background-position: center 45%;
+					background-repeat: no-repeat;
+					@media #{$tablet} {
+						left: 0;
+						width: 150px;
+					}
+					> a {
+						display: block;
+						text-indent: -9999px;
+					}
+					@media #{$mobile} {
+						width: 220px;
+						left: 50%;
+						margin-left: -110px;
+					}
+
+					> a {
+						display: block;
+						height: 66px;
+						line-height: 66px;
+						text-align: center;
+					}
+				}
+				> .menu-btn {
+					display: none;
+					@media #{$mobile} {
+						display: block;
+						position: absolute;
+						right: 10px;
+						top: 50%;
+						margin-top: -15px;
+						width: 30px;
+						height: 30px;
+						text-indent: -9999px;
+						background-image: url(../images/menu.png);
+						background-size: contain;
+						background-repeat: no-repeat;
+					}
+				}
+				> nav {
+					position: absolute;
+					right: 0;
+					top: 0;
+					width: calc(100% - 500px);
+					@media #{$tablet} {
+						width: calc(100% - 150px);
+					}
+					@media #{$mobile} {
+						display: none;
+						top: 66px;
+						width: 100%;
+						&.mobile-hidden {
+							display: none !important;
+						}
+					}
+					> .gnb {
+						display: flex;
+						@media #{$mobile} {
+							display: initial;
+						}
+						> li {
+							position: relative;
+							width: calc(100% / 4);
+							@media #{$tablet} {
+								width: calc(100% / 4);
+							}
+							@media #{$mobile} {
+								width: 100%;
+								background-color: #fff;
+							}
+							&.on {
+								> a {
+									color: #f0663c;
+									font-weight: 800;
+									background-color: #fff;
+								}
+							}
+							&:hover {
+								> a {
+									color: #f0663c;
+									font-weight: 800;
+									background-color: #fff;
+									@media #{$mobile} {
+										background-color: #f0663c;
+										color: #fff;
+									}
+								}
+							}
+							> a {
+								display: block;
+								height: 66px;
+								color: #fff;
+								line-height: 66px;
+								font-size: 15px;
+								font-weight: 600;
+								text-align: center;
+								@media #{$tablet} {
+									font-size: 10px;
+								}
+								@media #{$mobile} {
+									color: #f0663c;
+									font-size: 12px;
+								}
+							}
+						}
+					}
+				}
+			} //end of div
+		} //end of header
+		> section {
+			background-color: #fff;
+			> .about {
+				> .about_tit {
+					width: 100%;
+					padding: 50px 0;
+					> h2 {
+						display: none;
+						color: #f0663c;
+						font-weight: 600;
+						font-size: 50px;
+						text-align: center;
+					}
+					> p {
+						display: none;
+						width: 100px;
+						height: 5px;
+						background-color: #f0663c;
+						margin: 0 auto;
+					}
+				}
+				> .about_container {
+					display: flex;
+					width: 100%;
+					// height: 1000px;
+					height: auto;
+					@media #{$mobile} {
+						display: initial;
+					}
+					> .left {
+						opacity: 0;
+						position: relative;
+						width: 50%;
+						height: 100%;
+						@media #{$mobile} {
+							width: 100%;
+						}
+						> .frame {
+							width: 70%;
+							height: auto;
+							margin: 0 auto;
+
+							> img {
+								display: block;
+								width: 100%;
+								border-radius: 300px;
+							}
+						}
+						> div {
+							width: 80%;
+							margin: 50px auto;
+							> p {
+								text-align: center;
+								margin-bottom: 10px;
+								font-size: 17px;
+								font-weight: 600;
+								@media #{$tablet} {
+									font-size: 16px;
+								}
+							}
+						}
+					}
+					> .right {
+						width: 50%;
+						height: 100%;
+						@media #{$mobile} {
+							width: 100%;
+						}
+						> .profile {
+							position: relative;
+							opacity: 0;
+							width: 80%;
+							padding: 10% 0;
+							margin: 0 auto;
+							@media #{$tablet} {
+								padding: 0;
+							}
+
+							> h3 {
+								height: 100%;
+								width: 70%;
+								opacity: 0.3;
+								@media #{$tablet} {
+									position: initial;
+									width: 70%;
+									height: auto;
+									margin: 0 auto 10%;
+									opacity: 1;
+								}
+								> img {
+									display: block;
+									width: 100%;
+								}
+							}
+							> .btu {
+								position: absolute;
+								bottom: 10px;
+								right: 20px;
+								color: #111;
+								font-size: 1.2vw;
+								line-height: 1.6;
+								letter-spacing: 2px;
+								text-shadow: 1px 1px 0px #fff;
+								@media #{$tablet} {
+									position: initial;
+									width: 100%;
+									margin: 0 auto;
+									color: rgb(122, 122, 122);
+									text-align: center;
+									text-shadow: initial;
+								}
+								@media #{$mobile} {
+									font-size: 15px;
+								}
+							}
+						} //end of profile
+						> .hash-tag {
+							padding: 5% 0;
+							> p {
+								opacity: 0;
+								margin: 0 0 50px 40px;
+								font-size: 40px;
+								font-weight: 600;
+								@media #{$tablet} {
+									margin-left: 0;
+									margin-bottom: 20px;
+									font-size: 30px;
+									text-align: center;
+								}
+							}
+							> .about_me {
+								opacity: 0;
+								display: flex;
+								justify-content: space-between;
+								width: 85%;
+								margin: 0 auto;
+								@media #{$tablet} {
+									width: 100%;
+								}
+								> div {
+									width: calc(100% / 3);
+									&.patience {
+										margin: 0 50px;
+									}
+									> .frame {
+										width: 80px;
+										height: 80px;
+										margin: 0 auto;
+										@media #{$tablet} {
+											width: 50px;
+											height: 50px;
+										}
+										> img {
+											display: block;
+											width: 100%;
+										}
+									}
+									> h4 {
+										margin: 10px 0;
+										color: #000;
+										font-size: 20px;
+										font-weight: 600;
+										text-align: center;
+										@media #{$tablet} {
+											font-size: 15px;
+										}
+									}
+									> span {
+										display: block;
+										font-size: 11px;
+										text-align: center;
+									}
+								}
+							}
+						}
+					} //end of right
+				}
+			} //end of .about
+			> .skill {
+				> .skill_tit {
+					padding: 50px 0;
+					> h2 {
+						display: none;
+						color: #f0663c;
+						font-weight: 600;
+						font-size: 50px;
+						text-align: center;
+					}
+					> p {
+						display: none;
+						width: 100px;
+						height: 5px;
+						background-color: #f0663c;
+						margin: 0 auto;
+					}
+				}
+				> .skill_container {
+					position: relative;
+					width: 80%;
+					margin: 0 auto;
+					padding: 5% 0 10% 0;
+					@media #{$tablet} {
+						width: 100%;
+					}
+					@media #{$mobile} {
+						width: 100%;
+					}
+
+					> .skills {
+						width: 100%;
+						> ul {
+							display: flex;
+							justify-content: space-around;
+							margin-bottom: 130px;
+							&:last-child {
+								margin-bottom: 0;
+								@media #{$mobile} {
+									padding-bottom: 10%;
+								}
+							}
+							@media #{$mobile} {
+								margin-bottom: 75px;
+							}
+							> li {
+								position: relative;
+								width: 200px;
+								height: 180px;
+								font-size: 20px;
+								font-weight: 600;
+								@media #{$tablet} {
+									width: calc(100% / 4);
+									height: auto;
+								}
+								@media #{$mobile} {
+									width: calc(100% / 4 - 15px);
+								}
+								&:hover {
+									> .frame {
+										> img {
+											transform: scale(1.1);
+										}
+									}
+								}
+								> span {
+									position: absolute;
+									bottom: 0;
+									display: block;
+									width: 100%;
+									height: 20%;
+									font-weight: 600;
+									font-size: 16px;
+									line-height: 30px;
+									text-align: center;
+									@media #{$tablet} {
+										line-height: initial;
+									}
+									@media #{$mobile} {
+										font-size: 13px;
+									}
+								}
+								> .frame {
+									overflow: hidden;
+									width: 80%;
+									height: 80%;
+									margin: 0 auto;
+									@media #{$tablet} {
+										width: 60%;
+									}
+									@media #{$mobile} {
+										width: 75%;
+									}
+									> img {
+										display: block;
+										width: 100%;
+										height: 100%;
+										transition: all 1s;
+									}
+								}
+								> .jquery {
+									width: 80%;
+									height: 60px;
+									margin-top: 30px;
+									@media #{$tablet} {
+										width: 80%;
+										height: auto;
+										margin-top: 20px;
+									}
+									@media #{$mobile} {
+										width: 100%;
+										margin-top: 25px;
+									}
+								}
+							} //end of li
+						}
+					}
+				}
+				> .skill-show {
+					width: 80%;
+					margin: 0 auto;
+					> ul {
+						> li {
+							width: 100%;
+							margin-bottom: 80px;
+							> a {
+								position: relative;
+								display: block;
+								margin-left: 30px;
+								height: 50px;
+								line-height: 50px;
+								font-size: 20px;
+								font-weight: 600;
+								border-bottom: 3px solid #f0663c;
+								&:after {
+									position: absolute;
+									right: 10px;
+									top: 20px;
+									width: 0;
+									height: 0;
+									border-width: 10px;
+									border-style: solid;
+									border-color: #f0663c transparent transparent transparent;
+									content: '';
+								}
+							}
+							> ol {
+								display: none;
+								> li {
+									width: 80%;
+									padding: 20px 0;
+									margin-left: 50px;
+									font-size: 16px;
+								}
+							}
+						}
+					}
+				}
+			} //end of .skill
+			> .portfolio {
+				> div {
+					display: flex;
+					width: 100%;
+					height: 500px;
+					margin-bottom: 100px;
+					background-color: rgb(255, 255, 255);
+					transition: all 0.9s;
+					@media #{$tablet} {
+						transition: initial;
+					}
+					@media #{$mobile} {
+						display: block;
+						position: relative;
+						height: 800px;
+					}
+					> .exp {
+						position: relative;
+						width: 50%;
+						height: 100%;
+						@media #{$mobile} {
+							position: absolute;
+							left: 0;
+							bottom: 0;
+							width: 100%;
+							height: 300px;
+						}
+						> .txt {
+							position: absolute;
+							top: 80px;
+							left: 50%;
+							width: 400px;
+							height: 300px;
+							margin-left: -200px;
+							@media #{$tablet} {
+								top: 50%;
+								width: 100%;
+								margin: -150px 0 0 -50%;
+								text-align: center;
+							}
+
+							> h2 {
+								margin-bottom: 30px;
+								font-size: 40px;
+							}
+							> p {
+								margin-bottom: 10px;
+								font-size: 16px;
+								@media #{$tablet} {
+									font-size: 13px;
+								}
+							}
+							> a {
+								display: block;
+								width: 130px;
+								height: 40px;
+								margin-top: 30px;
+								line-height: 40px;
+								text-align: center;
+								border: 1px solid #f0663c;
+								border-radius: 100px;
+								@media #{$tablet} {
+									position: absolute;
+									left: 50%;
+									margin-left: -65px;
+								}
+								@media #{$mobile} {
+									position: absolute;
+									left: 50%;
+									margin-left: -65px;
+								}
+							}
+							> .go {
+								margin-top: 30px;
+							}
+						}
+					} //end of exp
+					> .piture {
+						position: relative;
+						width: 50%;
+						height: 100%;
+						@media #{$mobile} {
+							width: 100%;
+							height: 500px;
+						}
+						> .frame {
+							position: absolute;
+							left: 50%;
+							@media #{$mobile} {
+								width: 100%;
+							}
+							> img {
+								display: block;
+								width: 100%;
+								height: 100%;
+							}
+						}
+					} //end of piture
+
+					&:hover {
+						color: #fff;
+						background-color: #f0663c;
+						> .exp {
+							> .txt {
+								> a {
+									color: #fff;
+									border-color: #fff;
+								}
+							}
+						}
+					} //end of hover
+					&.line {
+						> .piture {
+							> .frame {
+								top: 50%;
+								margin-left: -40%;
+								width: 80%;
+								height: 220px;
+								margin-top: -130px;
+								@media #{$tablet} {
+									width: 100%;
+									height: 50%;
+									margin-left: -50%;
+								}
+								@media #{$mobile} {
+									width: 100%;
+								}
+							}
+						}
+					}
+					&.kyoungdong {
+						> .piture {
+							> .frame {
+								top: 50%;
+								width: 80%;
+								margin: -25% 0 0 -40%;
+								@media #{$tablet} {
+									width: 100%;
+									margin-left: -50%;
+								}
+							}
+						}
+					}
+					&.nateon {
+						> .exp {
+							> .txt {
+								> .process {
+									position: absolute;
+									left: 180px;
+									top: 188px;
+									@media #{$tablet} {
+										width: 30%;
+										left: 50%;
+										margin-left: 5%;
+									}
+									@media #{$mobile} {
+										left: 70px;
+										margin-left: initial;
+									}
+								}
+								> .go {
+									position: absolute;
+									left: 0;
+									top: 188px;
+									@media #{$tablet} {
+										width: 30%;
+										left: 50%;
+										margin-left: -30%;
+									}
+									@media #{$mobile} {
+										left: initial;
+										right: 70px;
+										margin-left: initial;
+									}
+								}
+							}
+						}
+						> .piture {
+							> .frame {
+								top: 50px;
+								width: 500px;
+								height: auto;
+								margin-left: -250px;
+								@media #{$tablet} {
+									width: 90%;
+									top: 50%;
+									margin: -40% 0 0 -45%;
+								}
+							}
+						}
+					}
+					&.tngt {
+						> .exp {
+							> .txt {
+								> .process {
+									position: absolute;
+									left: 180px;
+									top: 188px;
+									@media #{$tablet} {
+										left: 50%;
+										width: 30%;
+										margin-left: 5%;
+									}
+									@media #{$mobile} {
+										left: 70px;
+										margin-left: initial;
+									}
+								}
+								> .go {
+									position: absolute;
+									left: 0;
+									top: 188px;
+									@media #{$tablet} {
+										width: 30%;
+										left: 50%;
+										margin-left: -30%;
+									}
+									@media #{$mobile} {
+										left: initial;
+										right: 70px;
+										margin-left: initial;
+									}
+								}
+							}
+						}
+						> .piture {
+							> .frame {
+								width: 80%;
+								height: 100%;
+								margin-left: -40%;
+								@media #{$tablet} {
+									width: 100%;
+									margin-left: -50%;
+								}
+							}
+						}
+					}
+				} //end of div
+			} //end of portfolio
+			> .uiux {
+				> .uiux-tit {
+					position: relative;
+					padding: 50px 0;
+					> h2 {
+						display: none;
+						text-align: center;
+						color: #f0663c;
+						font-weight: 600;
+						font-size: 50px;
+					}
+					> p {
+						display: none;
+						width: 100px;
+						height: 5px;
+						background-color: #f0663c;
+						margin: 0 auto;
+					}
+				}
+				> .uiux_container {
+					display: flex;
+					justify-content: space-between;
+					position: relative;
+					width: 80%;
+					height: 500px;
+					margin: 0 auto;
+					@media #{$tablet} {
+						width: 100%;
+						height: 300px;
+					}
+					@media #{$mobile} {
+						display: initial;
+					}
+					> div {
+						position: relative;
+						width: 45%;
+						height: 400px;
+						@media #{$tablet} {
+							width: 45%;
+							height: 100%;
+						}
+						@media #{$mobile} {
+							width: 100%;
+							height: 300px;
+							margin-bottom: 30px;
+						}
+						> img {
+							display: block;
+							width: 100%;
+							height: 100%;
+						}
+						> .bg {
+							position: absolute;
+							left: 0;
+							top: 0;
+							display: block;
+							width: 100%;
+							height: 100%;
+							background-color: rgba(0, 0, 0, 0.5);
+						}
+						> h3 {
+							position: absolute;
+							top: 100px;
+							right: 50px;
+							color: #fff;
+							font-size: 35px;
+							@media #{$tablet} {
+								width: 40%;
+								right: 0;
+								top: 70px;
+								left: 50%;
+								margin-left: -20%;
+								font-size: 30px;
+								text-align: center;
+							}
+							@media #{$mobile} {
+								top: 70px;
+								width: 80%;
+								margin-left: -40%;
+							}
+						}
+						> p {
+							position: absolute;
+							top: 160px;
+							right: 50px;
+							color: #fff;
+							font-size: 13px;
+							@media #{$tablet} {
+								right: 0;
+								top: 160px;
+								left: 50%;
+								width: 80%;
+								margin-left: -40%;
+								text-align: center;
+							}
+							@media #{$mobile} {
+								top: 130px;
+							}
+						}
+						> a {
+							position: absolute;
+							top: 250px;
+							right: 50px;
+							display: block;
+							width: 150px;
+							height: 50px;
+							color: #fff;
+							font-size: 15px;
+							line-height: 50px;
+							text-align: center;
+							border: 1px solid #fff;
+							@media #{$tablet} {
+								top: initial;
+								right: 0;
+								left: 50%;
+								bottom: 50px;
+								width: 140px;
+								height: 40px;
+								margin-left: -70px;
+								line-height: 40px;
+							}
+						}
+					}
+				}
+			}
+			> .contact {
+				height: 1000px;
+				> .contact_tit {
+					padding: 50px 0;
+					> h2 {
+						display: none;
+						color: #f0663c;
+						font-weight: 600;
+						font-size: 50px;
+						text-align: center;
+					}
+					> p {
+						display: none;
+						width: 100px;
+						height: 5px;
+						background-color: #f0663c;
+						margin: 0 auto;
+					}
+				}
+				> .email-form {
+					display: none;
+					position: relative;
+					> .alert-light {
+						font-size: 15px;
+						text-align: center;
+						line-height: 1.8;
+						letter-spacing: 1px;
+					}
+					> .blinking {
+						-webkit-animation: blink 1.5s ease-in-out infinite alternate;
+						-moz-animation: blink 1.5s ease-in-out infinite alternate;
+						animation: blink 1.5s ease-in-out infinite alternate;
+					}
+					> .gform {
+						width: 800px;
+						height: 700px;
+						margin: 0 auto;
+						@media #{$tablet} {
+							width: 90%;
+						}
+						@media #{$mobile} {
+							width: 90%;
+						}
+						> fieldset {
+							margin-bottom: 50px;
+							> label {
+								margin-bottom: 10px;
+								font-size: 17px;
+							}
+							> input {
+								border-color: #f0663c;
+							}
+							> textarea {
+								border-color: #f0663c;
+							}
+						}
+						> .send {
+							border: 0;
+							outline: 0;
+							position: absolute;
+							width: 200px;
+							height: 50px;
+							left: 50%;
+							bottom: 90px;
+							margin-left: -100px;
+							color: #fff;
+							font-size: 15px;
+							line-height: 50px;
+							text-align: center;
+							background-color: #f0663c;
+						}
+
+						> .thankyou_message {
+							position: absolute;
+							bottom: 0;
+							width: 800px;
+							height: 50px;
+							line-height: 2.0;
+							@media #{$mobile} {
+								width: 90%;
+								line-height: 2.5;
+								font-size: 8px;
+							}
+						}
+					} //end of gform
+				}
+			} //end of contact
+			> .top-btn {
+				z-index: 100;
+				display: none;
+				position: fixed;
+				bottom: 82px;
+				right: 30px;
+				width: 60px;
+				height: 60px;
+				color: #f0663c;
+				font-weight: 600;
+				text-align: center;
+				line-height: 60px;
+				letter-spacing: 1px;
+				border-radius: 30px;
+				@media #{$tablet} {
+					bottom: 50px;
+				}
+				&:hover {
+					color: #fff;
+					background-color: #f0663c;
+				}
+			}
+		} //end of section
+		> footer {
+			position: relative;
+			height: 155px;
+			background-color: #fff;
+			> address {
+				position: absolute;
+				width: 100%;
+				bottom: 20px;
+				color: #ccc;
+				font-size: 15px;
+				text-align: center;
+			}
+			> a {
+				position: absolute;
+				left: 50%;
+				top: 10px;
+				display: block;
+				width: 200px;
+				height: 100px;
+				margin-left: -100px;
+				@media #{$mobile} {
+					width: 150px;
+					height: 70px;
+					margin-left: -75px;
+				}
+				> img {
+					display: block;
+					width: 100%;
+					height: 100%;
+				}
+			}
+		}
+	} //end of wrap
+}
+@-webkit-keyframes blink {
+	0% {
+		opacity: 0.5;
+	}
+	100% {
+		text-shadow: 1px 1px 10px rgb(255, 202, 142);
+		color: #f0663c;
+		opacity: 1;
+	}
+}
+@-moz-keyframes blink {
+	0% {
+		opacity: 0.5;
+	}
+	100% {
+		text-shadow: 1px 1px 10px rgb(255, 202, 142);
+		color: #f0663c;
+		opacity: 1;
+	}
+}
+@keyframes blink {
+	0% {
+		opacity: 0.5;
+	}
+	100% {
+		text-shadow: 1px 1px 10px rgb(255, 202, 142);
+		color: #f0663c;
+		opacity: 1;
+	}
+}
+#smartlock_container,
+#tngt_container,
+#hollys_container,
+#nateon_container {
+	width: 70%;
+	margin: 0 auto;
+	@media #{$tablet} {
+		width: 100%;
+	}
+	> img {
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+}
